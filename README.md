@@ -22,6 +22,12 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 <!-- Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). -->
 
+## What I learnt from this project
+* How to use localstorage
+* How to use floating buttoms in ionic projects
+* A general idea of how to use routes in ionic projects.
+* How to use alert screens with ionic
+
 
 This project was created by godxvincent.
 

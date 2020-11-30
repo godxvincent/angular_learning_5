@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { List } from '../models/list.model';
 
@@ -8,8 +9,24 @@ export class WishesService {
 
   listas: List[] = [];
   constructor() {
-    const lista1 = new List('Recoletar piedras del infinito');
-    const lista2 = new List('Heroes a desaparecer');
-    this.listas.push(lista1, lista2);
+    this.cargarStorage();
+   }
+
+   crearLista(titulo: string) {
+    const lista = new List(titulo);
+    this.listas.push(lista);
+    this.guardarStorage();
+   }
+
+   guardarStorage() {
+    localStorage.setItem('datosLista', JSON.stringify(this.listas));
+   }
+
+   cargarStorage() {
+
+    if ( localStorage.getItem('datosLista') ) {
+      this.listas = JSON.parse ( localStorage.getItem('datosLista') );
+    }
+
    }
 }
