@@ -7,8 +7,9 @@ import { List } from '../models/list.model';
 export class WishesService {
 
   listas: List[] = [];
-
   constructor() {
-    console.log('servicio inicializado');
+    const lista1 = new List('Recoletar piedras del infinito');
+    const lista2 = new List('Heroes a desaparecer');
+    this.listas.push(lista1, lista2);
    }
 }
