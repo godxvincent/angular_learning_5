@@ -39,4 +39,15 @@ export class WishesService {
     this.guardarStorage();
   }
 
+  actualizarLista( tituloNuevo: string,  lista: List ): void {
+    this.listas = this.listas.map<List>( elemento => {
+      if (elemento.id === lista.id) {
+        elemento.titulo = tituloNuevo;
+      }
+      return elemento;
+    });
+
+    this.guardarStorage();
+  }
+
 }
