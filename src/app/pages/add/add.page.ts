@@ -13,7 +13,7 @@ export class AddPage implements OnInit {
 
   lista: List;
   nombreItem: string;
-  constructor(private wishesService: WishesService, 
+  constructor(private wishesService: WishesService,
               private activatedRoute: ActivatedRoute) {
 
     // this.activatedRoute.params.subscribe( queryString => {

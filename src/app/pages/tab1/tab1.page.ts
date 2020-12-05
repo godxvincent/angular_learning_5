@@ -11,12 +11,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab1Page {
 
-  listasDeseos: List [] = [];
-
   constructor(public wishService: WishesService,
               private router: Router,
               private alertController: AlertController) {
-    this.listasDeseos = this.wishService.listas;
   }
 
   async agregarLista() {
@@ -33,7 +30,7 @@ export class Tab1Page {
         {
           text: 'Cancelar',
           role: 'cancel',
-          handler: () => { 
+          handler: () => {
             console.log('cancelar');
           }
         },
@@ -54,10 +51,4 @@ export class Tab1Page {
 
     alert.present();
   }
-
-  modificarLista(item: List) {
-    console.log(item);
-    this.router.navigateByUrl(`/tabs/tab1/add/${ item.id }`);
-  }
-
 }
