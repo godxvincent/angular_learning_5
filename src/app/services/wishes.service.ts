@@ -16,6 +16,12 @@ export class WishesService {
     const lista = new List(titulo);
     this.listas.push(lista);
     this.guardarStorage();
+    return lista.id;
+   }
+
+   obtenerLista(id: string | number) {
+     id = Number(id);
+     return this.listas.find( datosDeLaLista => datosDeLaLista.id === id);
    }
 
    guardarStorage() {
@@ -23,10 +29,10 @@ export class WishesService {
    }
 
    cargarStorage() {
-
     if ( localStorage.getItem('datosLista') ) {
       this.listas = JSON.parse ( localStorage.getItem('datosLista') );
     }
-
    }
+
+
 }

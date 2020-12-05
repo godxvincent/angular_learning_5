@@ -45,14 +45,19 @@ export class Tab1Page {
             if (dataFormulario.titulo.length === 0) {
               return;
             }
-            this.wishService.crearLista(dataFormulario.titulo);
-            // this.router.navigateByUrl('/tabs/tab1/add');
+            const listaId = this.wishService.crearLista(dataFormulario.titulo);
+            this.router.navigateByUrl(`/tabs/tab1/add/${ listaId }`);
           }
         }
       ]
     });
 
     alert.present();
+  }
+
+  modificarLista(item: List) {
+    console.log(item);
+    this.router.navigateByUrl(`/tabs/tab1/add/${ item.id }`);
   }
 
 }

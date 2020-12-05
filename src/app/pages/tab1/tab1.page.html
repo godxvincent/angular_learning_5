@@ -8,10 +8,10 @@
 
 <ion-content [fullscreen]="true" color="dark">
     <ion-list color="dark">
-        <ion-item *ngFor="let item of listasDeseos" detail color="dark">
+        <ion-item *ngFor="let item of listasDeseos" detail color="dark" (click)="modificarLista(item)">
             <!-- Controla el ancho de contenido -->
-            <ion-label> {{ item.titulo }}
-            </ion-label>
+            <ion-label> {{ item.titulo }}</ion-label>
+            <ion-note slot="end" color="tertiary"> {{ item.items.length }} items </ion-note>
         </ion-item>
     </ion-list>
 
